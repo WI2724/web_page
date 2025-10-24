@@ -281,14 +281,20 @@
 				</div>
 
                
-                <div class="col-md-4 col-sm-6 gallery-grid gal_b ">
-					<div class="gallery-single fix">
-						<img src="uploads/u3.png" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<a href="uploads/u3.png" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
+                <div class="col-md-4 col-sm-6 gallery-grid gal_b">
+  <div class="gallery-single fix">
+    <!-- Video thumbnail -->
+    <video id="myVideo" class="img-fluid" poster="uploads/u3.png">
+      <source src="uploads/1video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay with play button -->
+    <div class="img-overlay" onclick="playVideo()">
+      <a href="#" class="hoverbutton global-radius"><i class="fa fa-play"></i></a>
+    </div>
+  </div>
+</div>
                 <div class="col-md-4 col-sm-6 gallery-grid gal_b ">
 					<div class="gallery-single fix">
 						<img src="uploads/u7.png" class="img-fluid" alt="Image">
