@@ -295,6 +295,17 @@
     </div>
   </div>
 </div>
+<script>
+  function playVideo() {
+    var video = document.getElementById("myVideo");
+    var overlay = document.querySelector(".img-overlay");
+
+    // Hide overlay and play video
+    overlay.style.display = "none";
+    video.play();
+    video.setAttribute("controls", "controls");
+  }
+</script>
                 
                  <div class="col-md-4 col-sm-6 gallery-grid gal_c ">
 					<div class="gallery-single fix">
