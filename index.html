@@ -281,7 +281,7 @@
 				</div>
 
                
-                <div class="col-md-4 col-sm-6 gallery-grid gal_b">
+<div class="col-md-4 col-sm-6 gallery-grid gal_b">
   <div class="gallery-single fix">
     <!-- Video thumbnail -->
     <video id="myVideo" class="img-fluid" poster="uploads/u3.png">
@@ -334,17 +334,39 @@
     font-size: 40px;
   }
 </style>
+
 <script>
   function playVideo() {
     var video = document.getElementById("myVideo");
     var overlay = document.querySelector(".img-overlay");
 
-    // Hide overlay and play video
+    // Hide overlay
     overlay.style.display = "none";
+
+    // Request fullscreen
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { // Safari
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { // IE/Edge
+      video.msRequestFullscreen();
+    }
+
+    // Autoplay and show controls
     video.play();
     video.setAttribute("controls", "controls");
+
+    // When video ends, show overlay again
+    video.onended = function() {
+      overlay.style.display = "flex";
+      video.removeAttribute("controls");
+    };
   }
 </script>
+
+
+
+
                 
                  <div class="col-md-4 col-sm-6 gallery-grid gal_c ">
 					<div class="gallery-single fix">
